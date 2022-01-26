@@ -34,7 +34,7 @@ do
 FINAMEIND="$db-$TIMESTAMP.gz"
 $MYSQLDUMP --force --opt --user=$MYSQL_USER -p$MYSQL_PASSWORD --databases $db | gzip > "$FOLDER/$FINAMEIND"
 ftp -n -v $HOST << EOT
-passive
+PASV
 user $USER $PASSWD
 prompt
 lcd $FOLDER
